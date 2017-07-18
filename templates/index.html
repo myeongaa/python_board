@@ -1,0 +1,17 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>몽몽</title>
+  </head>
+  <body>
+    <h1>게시퍈퍄퍄</h1>
+    <a href="{% url 'board:new' %}">글쓰기</a><br><br>
+    {% for b in boards %}
+      제목:<a href="{% url 'board:show' b.id %}">{{b.title}}</a><br>
+      내용:{{ b.content }}<br><br>
+    {% endfor %}
+  </body>
+</html>

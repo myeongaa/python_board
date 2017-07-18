@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>몽몽</title>
+  </head>
+  <body>
+    {% if error_message%}
+      {{ error_message }}
+    {% endif %}
+    <form action="{% url 'board:create' %}" method="post">
+      {% csrf_token %}
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" /></br>
+      <label for="content">Content</label>
+      <textarea name="content" id="content" rows="8" cols="80"></textarea><br>
+      <input type="submit" value="글쓰기"/  >
+    </form>
+  </body>
+</html>
